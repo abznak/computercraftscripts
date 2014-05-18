@@ -8,3 +8,7 @@ simpler.  I'm aware of problems with the code in it but by all means use it (or
 patch it) if you like.
 
 ComputerCraft: http://www.computercraft.info/
+
+
+turtle/  - turtle scripts
+comptuer/ - computer scripts
