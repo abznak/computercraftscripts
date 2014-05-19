@@ -183,7 +183,7 @@ function init()
 end
 
 init()
-build_circle(3)
+build_circle(4)
 turtle.up()
 
 
