@@ -123,7 +123,7 @@ function build_circle(r)
 	for y = -r, r, 1 do
 		a = ''
   	for x = -r, r, 1 do     
-			local isin = y*y + x*x <= r*r
+			local isin = y*y + x*x < r*r  --- less than or equal will always result in little knobby bits on the circle if r is an integer
 			if isin then
 				a = a .. '#'
 			else
@@ -192,7 +192,7 @@ function build_circle_stack()
 	r_start = 1
 	r_step = 1
 
-	r_stop = stack_size * r_step + r_start
+	r_stop = (stack_size-1) * r_step + r_start
 	for r = r_start, r_stop, r_step do
 		build_circle(r)
 		
