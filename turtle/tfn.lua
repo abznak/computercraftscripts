@@ -117,7 +117,8 @@ end
    
    
    
-
+-- build a flat circle.
+-- no error checking, because the fails will be art
 function build_circle(r) 
 	for y = -r, r, 1 do
 		a = ''
@@ -128,7 +129,17 @@ function build_circle(r)
 			else
 				a = a .. '.'
 			end
+			if isint then
+				select_building_material()
+				turtle.placeDown()
+			end
 		end
+
+		-- note, this only works without swapping the direction of the x loop because the function is symetrical
+		turtle.turnLeft()
+		turtle.forward()
+		turtle.turnRight()
+
 		print(a)
 	end
 end
@@ -150,4 +161,4 @@ function do_stuff()
 end
 
 ]]
-build_circle(5)
+build_circle(3)
