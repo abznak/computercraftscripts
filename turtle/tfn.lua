@@ -120,6 +120,8 @@ end
 -- build a flat circle.
 -- no error checking, because the fails will be art
 function build_circle(r) 
+	real_r = r
+	r = math.ceil(r)
 	for y = -r, r, 1 do
 		a = ''
   	for x = -r, r, 1 do     
@@ -182,8 +184,6 @@ function init()
 --	random_walk(100000, 0.1, 10)
 end
 
-init()
-build_circle_stack(4.5)
 --turtle.up()
 --turtle.up()
 --turtle.up()
@@ -216,3 +216,8 @@ end
 --for j = 1, 3, 1 do
 --	turtle.back()
 --end
+
+
+
+init()
+build_circle_stack()
