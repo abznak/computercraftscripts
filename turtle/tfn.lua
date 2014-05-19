@@ -122,9 +122,8 @@ end
 function build_circle(r) 
 	for y = -r, r, 1 do
 		a = ''
-  	for x = -r, r, 1 do
- --     local isin = y*y + x*x > r*r
-			isin = 1
+  	for x = -r, r, 1 do     
+			local isin = y*y + x*x > r*r
 			if isin then
 				a = a .. '#'
 			else
@@ -185,6 +184,8 @@ end
 
 init()
 build_circle(3)
+turtle.up()
+
 
 --for j = 1, 3, 1 do
 --	turtle.back()
