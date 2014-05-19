@@ -123,7 +123,8 @@ function build_circle(r)
 	for y = -r, r, 1 do
 		a = ''
   	for x = -r, r, 1 do
-      local isin = y*y + x*x > r*r
+ --     local isin = y*y + x*x > r*r
+			isin = 1
 			if isin then
 				a = a .. '#'
 			else
@@ -135,18 +136,32 @@ function build_circle(r)
 			end
 			turtle.forward()
 		end
-		turtle.back()
 
-		-- note, this only works without swapping the direction of the x loop because the function is symetrical
+
+		-- wasteful, but easy to code
+  	for x = -r, r, 1 do
+			turtle.back()
+		end
+
 		turtle.turnLeft()
 		turtle.forward()
-		turtle.turnLeft()
+		turtle.turnRight()
 
 		print(a)
 	end
+
+
+  -- possibly off by one
+	turtle.turnLeft()
+	for y = -r, r, 1 do
+		turtle.back()
+	end
+	turtle.turnRight()
+		
 end
 
 function init()
+--[[
 	print ('selected slot', selected_slot)
 	for j = 1, 10, 1 do
 		print ("eat and junk" .. j)
@@ -156,11 +171,12 @@ function init()
 		end
 	end
 	 
-	for j = 1, 15, 1 do
+	for j = 1, 3, 1 do
 		turtle.back()
 	end
 	turtle.turnLeft()
 	turtle.turnLeft()
+]]
 
 	print ('selected slot', selected_slot)
 	select_slot(internal_storage_start)
@@ -169,3 +185,7 @@ end
 
 init()
 build_circle(3)
+
+--for j = 1, 3, 1 do
+--	turtle.back()
+--end
