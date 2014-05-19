@@ -205,6 +205,7 @@ function build_circle_stack()
 			turtle.forward()
 		end
 		turtle.turnRight()
+		turtle.up()
 		
 		print(r)
 	end
