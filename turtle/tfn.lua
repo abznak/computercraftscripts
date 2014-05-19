@@ -134,19 +134,20 @@ function build_circle(r)
 	end
 end
 
-build_circle(5)
-return
 
- 
-print ('selected slot', selected_slot)
-for j = 1, 10, 1 do
-  print ("eat and junk" .. j)
-  eat_and_junk()
+function do_stuff()
+	print ('selected slot', selected_slot)
+	for j = 1, 10, 1 do
+		print ("eat and junk" .. j)
+		eat_and_junk()
+	end
+	 
+	for j = 1, 15, 1 do
+		turtle.back()
+	end
+	print ('selected slot', selected_slot)
+	select_slot(internal_storage_start)
+	random_walk(100000, 0.1, 10)
 end
- 
-for j = 1, 15, 1 do
-  turtle.back()
-end
-print ('selected slot', selected_slot)
-select_slot(internal_storage_start)
-random_walk(100000, 0.1, 10)
+
+build_circle(5)
