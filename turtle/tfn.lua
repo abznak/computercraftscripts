@@ -198,11 +198,11 @@ function build_circle_stack()
 		
 		-- move to keep turtle centered.  Assumes r_step is positive
 		for j = 1, r_step, 1 do
-			turtle.forward()
+			turtle.back()
 		end
 		turtle.turnLeft()
 		for j = 1, r_step, 1 do
-			turtle.forward()
+			turtle.back()
 		end
 		turtle.turnRight()
 		turtle.up()
