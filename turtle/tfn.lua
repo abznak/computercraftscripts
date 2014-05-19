@@ -183,10 +183,34 @@ function init()
 end
 
 init()
-build_circle(4.5)
-turtle.up()
-turtle.up()
-turtle.up()
+build_circle_stack(4.5)
+--turtle.up()
+--turtle.up()
+--turtle.up()
+
+
+function build_circle_stack()
+	stack_size = 3
+	r_start = 1
+	r_step = 1
+
+	r_stop = stack_size * r_step + r_start
+	for r = r_start, r_stop, r_step do
+		build_circle()
+		
+		-- move to keep turtle centered.  Assumes r_step is positive
+		for j = 1, r_step, 1 do
+			turtle.forward()
+		end
+		turtle.turnLeft()
+		for j = 1, r_step, 1 do
+			turtle.forward()
+		end
+		turtle.turnRight()
+		
+		print(r)
+	end
+end
 
 
 --for j = 1, 3, 1 do
