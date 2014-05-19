@@ -124,9 +124,9 @@ function build_circle(r)
   	for x = -r, r, 1 do
       local isin = y*y + x*x > r*r
 			if isin then
-				a = a + '#'
+				a = a .. '#'
 			else
-				a = a + '.'
+				a = a .. '.'
 			end
 		end
 		print(a)
