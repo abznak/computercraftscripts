@@ -117,7 +117,26 @@ end
    
    
    
- 
+
+
+function build_circle(r) 
+	for y = -r, r, 1 do
+		a = ''
+  	for x = -r, r, 1 do
+      local isin = y*y + x*x > r*r
+			if isin then
+				a = a + '#'
+			else
+				a = a + '.'
+			end
+		end
+		print(a)
+	end
+end
+
+build_circle(5)
+return
+
  
 print ('selected slot', selected_slot)
 for j = 1, 10, 1 do
