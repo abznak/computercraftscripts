@@ -220,3 +220,6 @@ end
 
 init()
 build_circle_stack()
+turtle.up()
+turtle.up()
+turtle.up()
