@@ -123,7 +123,7 @@ function build_circle(r)
 	for y = -r, r, 1 do
 		a = ''
   	for x = -r, r, 1 do     
-			local isin = y*y + x*x < r*r  --- less than or equal will always result in little knobby bits on the circle if r is an integer
+			local isin = y*y + x*x <= math.pow(r+0.5,2) --- adding .5 gives nicer circles
 			if isin then
 				a = a .. '#'
 			else
