@@ -189,8 +189,8 @@ end
 
 function build_circle_stack()
 	stack_size = 3
-	r_start = 1
-	r_step = 1
+	r_start = 2
+	r_step = 2
 
 	r_stop = (stack_size-1) * r_step + r_start
 	for r = r_start, r_stop, r_step do
