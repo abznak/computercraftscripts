@@ -118,7 +118,6 @@ end
    
    
 
---[[
 function build_circle(r) 
 	for y = -r, r, 1 do
 		a = ''
@@ -133,7 +132,6 @@ function build_circle(r)
 		print(a)
 	end
 end
-]]
 
 --[[
 function do_stuff()
@@ -151,5 +149,5 @@ function do_stuff()
 	random_walk(100000, 0.1, 10)
 end
 
-build_circle(5)
 ]]
+build_circle(5)
