@@ -146,8 +146,7 @@ function build_circle(r)
 	end
 end
 
---[[
-function do_stuff()
+function init()
 	print ('selected slot', selected_slot)
 	for j = 1, 10, 1 do
 		print ("eat and junk" .. j)
@@ -159,8 +158,8 @@ function do_stuff()
 	end
 	print ('selected slot', selected_slot)
 	select_slot(internal_storage_start)
-	random_walk(100000, 0.1, 10)
+--	random_walk(100000, 0.1, 10)
 end
 
-]]
+init()
 build_circle(3)
