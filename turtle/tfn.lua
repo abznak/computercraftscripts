@@ -135,7 +135,7 @@ function build_circle(r)
 end
 ]]
 
-
+--[[
 function do_stuff()
 	print ('selected slot', selected_slot)
 	for j = 1, 10, 1 do
@@ -152,3 +152,4 @@ function do_stuff()
 end
 
 build_circle(5)
+]]
