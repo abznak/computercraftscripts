@@ -194,7 +194,7 @@ function build_circle_stack()
 
 	r_stop = stack_size * r_step + r_start
 	for r = r_start, r_stop, r_step do
-		build_circle()
+		build_circle(r)
 		
 		-- move to keep turtle centered.  Assumes r_step is positive
 		for j = 1, r_step, 1 do
