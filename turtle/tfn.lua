@@ -120,8 +120,6 @@ end
 -- build a flat circle.
 -- no error checking, because the fails will be art
 function build_circle(r) 
-	real_r = r
-	r = math.ceil(r)
 	for y = -r, r, 1 do
 		a = ''
   	for x = -r, r, 1 do     
