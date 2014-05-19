@@ -118,7 +118,7 @@ end
    
    
 
-
+--[[
 function build_circle(r) 
 	for y = -r, r, 1 do
 		a = ''
@@ -133,6 +133,7 @@ function build_circle(r)
 		print(a)
 	end
 end
+]]
 
 
 function do_stuff()
