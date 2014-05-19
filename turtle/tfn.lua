@@ -33,29 +33,29 @@ end
 -- drop stuff we don't want.  Eat if hungry.  
 -- @return true iff we did something
 function eat_and_junk()
-did_stuff = false
-while turtle.suck() do
-  print "sucked"
-end
-for i = internal_storage_start, internal_storage_stop, 1 do
- 
-  print ("location ", i)
-  select_slot(i)
-  if (turtle.compareTo(eat_material_index)) then
-    print("found food at " .. i)  
-    if turtle.getFuelLevel() < target_fuel_level then
-      print "eating it"
-      turtle.refuel()
-      did_stuff = true
-    end
-  end
-  if (not turtle.compareTo(keep_material_index)) then
-    print("unwanted item at " .. i)
-    turtle.dropUp()
-    did_stuff = true
-  end
-end
-return did_stuff
+	did_stuff = false
+	while turtle.suck() do
+		print "sucked"
+	end
+	for i = internal_storage_start, internal_storage_stop, 1 do
+	 
+		print ("location ", i)
+		select_slot(i)
+		if (turtle.compareTo(eat_material_index)) then
+			print("found food at " .. i)  
+			if turtle.getFuelLevel() < target_fuel_level then
+				print "eating it"
+				turtle.refuel()
+				did_stuff = true
+			end
+		end
+		if (not turtle.compareTo(keep_material_index)) then
+			print("unwanted item at " .. i)
+			turtle.dropUp()
+			did_stuff = true
+		end
+	end
+	return did_stuff
 end
  
 function random_walk(max_distance, turn_prob, max_anger)
@@ -140,7 +140,7 @@ function build_circle(r)
 		-- note, this only works without swapping the direction of the x loop because the function is symetrical
 		turtle.turnLeft()
 		turtle.forward()
-		turtle.turnRight()
+		turtle.turnLeft()
 
 		print(a)
 	end
@@ -150,12 +150,18 @@ function init()
 	print ('selected slot', selected_slot)
 	for j = 1, 10, 1 do
 		print ("eat and junk" .. j)
-		eat_and_junk()
+		if not eat_and_junk() then
+			print "done eating"
+			break
+		end
 	end
 	 
 	for j = 1, 15, 1 do
 		turtle.back()
 	end
+	turtle.turnLeft()
+	turtle.turnLeft()
+
 	print ('selected slot', selected_slot)
 	select_slot(internal_storage_start)
 --	random_walk(100000, 0.1, 10)
