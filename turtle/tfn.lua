@@ -19,7 +19,7 @@ print("")
 internal_storage_start = 4
 internal_storage_stop = 16
  
-target_fuel_level = 25000
+target_fuel_level = 2500
  
  
  
