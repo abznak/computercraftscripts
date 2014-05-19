@@ -129,11 +129,13 @@ function build_circle(r)
 			else
 				a = a .. '.'
 			end
-			if isint then
+			if isin then
 				select_building_material()
 				turtle.placeDown()
 			end
+			turtle.forward()
 		end
+		turtle.back()
 
 		-- note, this only works without swapping the direction of the x loop because the function is symetrical
 		turtle.turnLeft()
