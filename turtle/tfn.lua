@@ -16,10 +16,10 @@ print("")
  
  
 -- locations before this are reserved
-internal_storage_start = 4
+internal_storage_start = 3
 internal_storage_stop = 16
  
-target_fuel_level = 2500
+target_fuel_level = 25000
  
  
  
@@ -160,7 +160,6 @@ function build_circle(r)
 end
 
 function init()
---[[
 	print ('selected slot', selected_slot)
 	for j = 1, 10, 1 do
 		print ("eat and junk" .. j)
@@ -170,6 +169,7 @@ function init()
 		end
 	end
 	 
+--[[
 	for j = 1, 3, 1 do
 		turtle.back()
 	end
@@ -189,8 +189,8 @@ end
 
 function build_circle_stack()
 	stack_size = 3
-	r_start = 2
-	r_step = 2
+	r_start = 3
+	r_step = 3
 
 	r_stop = (stack_size-1) * r_step + r_start
 	for r = r_start, r_stop, r_step do
@@ -219,7 +219,13 @@ end
 
 
 init()
+turtle.turnLeft()
+turtle.turnLeft()
+turtle.forward()
+for k = 1, 10, 1 do
+	turtle.up()
+end
+for k = 1, 30, 1 do
+	turtle.forward()
+end
 build_circle_stack()
-turtle.up()
-turtle.up()
-turtle.up()
