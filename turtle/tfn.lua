@@ -188,9 +188,14 @@ end
 
 
 function build_circle_stack()
+--[[ big island 
 	stack_size = 3
 	r_start = 3
 	r_step = 3
+]]
+	stack_size = 3
+	r_start = 4
+	r_step = 2
 
 	r_stop = (stack_size-1) * r_step + r_start
 	for r = r_start, r_stop, r_step do
@@ -219,6 +224,7 @@ end
 
 
 init()
+--[[ ground launch script
 turtle.turnLeft()
 turtle.turnLeft()
 turtle.forward()
@@ -228,4 +234,17 @@ end
 for k = 1, 30, 1 do
 	turtle.forward()
 end
+]]
+turtle.turnLeft()
+for k = 1, 8, 1 do
+	turtle.forward()
+end
+turtle.turnRight()
+for k = 1, 15, 1 do
+	turtle.forward()
+end
+for k = 1, 7, 1 do
+	turtle.down()
+end
+
 build_circle_stack()
