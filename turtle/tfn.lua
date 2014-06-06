@@ -132,7 +132,8 @@ function build_diamond(r, isplace)
 	for y = -r, r, 1 do
 		a = ''
   	for x = -r, r, 1 do     
-			local isin = math.abs(y) + math.abs(x) <= r
+			-- diamond: local isin = math.abs(y) + math.abs(x) <= r
+			local isin = true
 			if isin then
 				a = a .. '#'
 			else
@@ -335,7 +336,7 @@ turtle.down()
 turtle.down()
 ]]
 
-turtle.back()
+--[[turtle.back()
 turtle.back()
 turtle.back()
 turtle.back()
@@ -373,9 +374,23 @@ turtle.up()
 turtle.up()
 turtle.up()
 turtle.up()
-build_diamond(3, true)
+]]
+
+for r = 0, 2, 1 do
+	build_diamond(r, true)
+	turtle.down()
+end
+turtle.up()
+
+
 os.sleep(20)
-build_diamond(3, false)
+
+for r = 2, 0, -1 do
+	turtle.up()
+	build_diamond(r, false)
+end
+
+turtle.down()
 turtle.down()
 turtle.down()
 turtle.forward()
