@@ -168,11 +168,11 @@ function build_diamond(r)
 
 
 	for y = 1, r, 1 do
-		turtle.back()
+		turtle.forward()
 	end
 	turtle.turnLeft()
 	for y = 1, r, 1 do
-		turtle.back()
+		turtle.forward()
 	end
 		
 end
@@ -315,6 +315,7 @@ turtle.forward()
 turtle.forward()
 ]]
 
+--[[turtle.down()
 turtle.down()
 turtle.down()
 turtle.down()
@@ -324,7 +325,7 @@ turtle.down()
 turtle.down()
 turtle.down()
 turtle.down()
-turtle.down()
+]]
 
 build_diamond(1)
 turtle.up()
