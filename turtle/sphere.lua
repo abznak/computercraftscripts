@@ -209,7 +209,7 @@ function select_material(mat_index)
   dbg(fnn, 'ss: ' .. ss)
 
 
-	if (turtle.getItemCount(ss) > 0) and turtle.compareTo(i) then
+	if (turtle.getItemCount(ss) > 0) and turtle.compareTo(mat_index) then
 		dbg(fnn, 'already selected')
 		return true
 	end
