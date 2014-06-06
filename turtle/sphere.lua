@@ -12,11 +12,11 @@ tx = 0
 ty = 0
 tz = 0
 
-cubesize = 1
+cubesize = 2
 
-mcubex = 2
-mcubey = 2
-mcubez = 2
+mcubex = 3
+mcubey = 3
+mcubez = 3
 
 -- locations before this are reserved
 internal_storage_start = 4
@@ -195,6 +195,7 @@ end
 
 
    
+turtle.up()  --because everything happens one square down from the turtle
 movey(12)
 
    
