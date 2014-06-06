@@ -25,7 +25,7 @@ function movex(n)
 		else
 			moved = turtle.forward()
 		end
-		if not got then
+		if not moved then
 			dbg('obstruction')
 		else
 			tx = tx + unitn
