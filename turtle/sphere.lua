@@ -12,8 +12,8 @@ plant_material_index = 3
 cubesize = 1
 
 mcubex = 3  --note, sphere fucntion assume these 3 are equal
-mcubey = cubex 
-mcubez = cubex
+mcubey = mcubex 
+mcubez = mcubex
 
 -- locations before this are reserved
 internal_storage_start = 4
