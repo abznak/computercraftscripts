@@ -163,7 +163,7 @@ function eat_and_junk()
 		if (turtle.compareTo(eat_material_index)) then
 			print("found food at " .. i)  
 			turtle.refuel()
-			print "fuel at " .. turtle.getFuelLevel()
+			print("fuel at " .. turtle.getFuelLevel())
 			did_stuff = true
 		end
 	end
