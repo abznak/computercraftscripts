@@ -144,7 +144,7 @@ function build_diamond(r, isplace)
 					select_building_material()
 					turtle.placeDown()
 				else
-					turtle.digDown()
+					turtle.digUp()  --Note UP!
 				end
 			end
 			turtle.forward()
@@ -346,9 +346,21 @@ turtle.down()
 turtle.down()
 ]]
 build_diamond(3, true)
-print "done.  press any key to erase"
-read()
+turtle.digDown()
+turtle.down()
+turtle.down()
+os.sleep(20)
 build_diamond(3, false)
+turtle.down()
+turtle.down()
+turtle.forward()
+turtle.forward()
+turtle.forward()
+turtle.forward()
+turtle.forward()
+turtle.forward()
+turtle.forward()
+
 
 --[[turtle.up()
 build_diamond(1)
