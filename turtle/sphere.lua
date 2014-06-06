@@ -175,10 +175,33 @@ function select_slot(ss)
 end
  
 function select_building_material()
+	select_material(keep_material_index)
+end
+--select material that is the same as the material at i
+function select_material(i)
   fnn = 'select_building_material'
   dbg(fnn, 'start')
   ss = selected_slot
   dbg(fnn, 'ss: ' .. ss)
+
+
+	if (turtle.getItemCount(ss) > 0) and turtle.compareTo(i) then
+		dbg(fnn, 'already selected')
+		return true
+	end
+	
+	for ss = internal_storage_start, internal_storage_stop, 1 do
+		dbg(fnn, 'testing ' .. ss)
+		if (turtle.getItemCount(ss) > 0) and turtle.compareTo(i) then
+			dbg(fnn, 'found! ' .. ss)
+			select_slot(ss)
+			return true
+		end
+	end
+	return false
+			
+
+--[[
   if ss < internal_storage_start or ss > internal_storage_stop then
     dbg(fnn, 'out of range')
     select_slot(internal_storage_start)
@@ -192,6 +215,7 @@ function select_building_material()
     select_slot(ss)
   end
   return turtle.getItemCount(ss) > 0
+]]
 end
 
 function init()
