@@ -12,7 +12,7 @@ tx = 0
 ty = 0
 tz = 0
 
-cubesize = 3
+cubesize = 1
 
 mcubex = 2
 mcubey = 2
@@ -38,9 +38,9 @@ read()
 ]]
 function rndInCube()
 	dbg("rndInCube")
-	local dx = math.random(cubesize-1)
-	local dy = math.random(cubesize-1)
-	local dz = math.random(cubesize-1)
+	local dx = math.random(cubesize)-1
+	local dy = math.random(cubesize)-1
+	local dz = math.random(cubesize)-1
 	movex(dx)
 	movey(dy)
 	movez(dz)
@@ -195,7 +195,7 @@ end
 
 
    
-movez(-30)
+movey(12)
 
    
 init()
