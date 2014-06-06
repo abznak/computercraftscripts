@@ -202,7 +202,7 @@ function select_building_material()
 	select_material(keep_material_index)
 end
 --select material that is the same as the material at i
-function select_material(matl_index)
+function select_material(mat_index)
   fnn = 'select_building_material'
   dbg(fnn, 'start')
   ss = selected_slot
