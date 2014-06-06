@@ -195,6 +195,7 @@ end
 
 
    
+movez(-30)
 
    
 init()
