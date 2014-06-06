@@ -308,11 +308,23 @@ for k = 1, 5, 1 do
 end
 ]]
 
+--[[turtle.forward()
 turtle.forward()
 turtle.forward()
 turtle.forward()
 turtle.forward()
-turtle.forward()
+]]
+
+turtle.down()
+turtle.down()
+turtle.down()
+turtle.down()
+turtle.down()
+turtle.down()
+turtle.down()
+turtle.down()
+turtle.down()
+turtle.down()
 
 build_diamond(1)
 turtle.up()
