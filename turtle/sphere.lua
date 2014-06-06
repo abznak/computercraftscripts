@@ -95,8 +95,11 @@ end
 function obstruction_check()
 	if (turtle.getFuelLevel() == 0) then
 		dbg('oc', 'out of fuel')
+		--todo: wait for more fuel
+		exit()
 	else
 		dbg('oc', "obstruction")
+		exit()
 	end
 end
 
