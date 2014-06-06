@@ -184,7 +184,7 @@ function select_building_material()
 end
 
 function init()
-	select_slot(0)
+	select_slot(1)
 end
 
 
