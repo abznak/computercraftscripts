@@ -306,6 +306,11 @@ for k = 1, 5, 1 do
 end
 ]]
 
+turtle.up()
+turtle.up()
+turtle.up()
+turtle.up()
+
 build_diamond(3)
 turtle.up()
 build_diamond(1)
