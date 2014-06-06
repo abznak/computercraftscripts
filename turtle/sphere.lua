@@ -20,7 +20,6 @@ function movex(n)
 	absn = math.abs(n)
 	unitn = n/absn
 	for i = 1, math.abs(n), 1 do
-		unitn = 
 		if (n < 0) then
 			moved = turtle.back()
 		else
