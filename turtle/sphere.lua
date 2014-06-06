@@ -247,6 +247,7 @@ function init()
 end
 
 
+movex(-20)
 print ('in 3...')   
 os.sleep(3)
 turtle.up()  --because everything happens one square down from the turtle
