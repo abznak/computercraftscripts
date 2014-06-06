@@ -72,6 +72,13 @@ end
 	
 
 
+function obstruction_check()
+	if (turtle.getFuelLevel() == 0) then
+		dbg('out of fuel')
+	else
+		dbug("obstruction")
+	end
+end
 
 
 function movez(n)
@@ -87,7 +94,7 @@ function movez(n)
 			moved = turtle.up()
 		end
 		if not moved then
-			dbg('obstruction')
+			obstruction_check()
 		else
 			tz = tz + unitn
 		end
@@ -106,7 +113,7 @@ function movey(n)
 			moved = turtle.forward()
 		end
 		if not moved then
-			dbg('obstruction')
+			obstruction_check()
 		else
 			ty = ty + unitn
 		end
@@ -126,7 +133,7 @@ function movex(n)
 			moved = turtle.forward()
 		end
 		if not moved then
-			dbg('obstruction')
+			obstruction_check()
 		else
 			tx = tx + unitn
 		end
@@ -191,6 +198,7 @@ end
 
 function init()
 	select_slot(1)
+	eat_and_junk()
 end
 
 
