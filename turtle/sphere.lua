@@ -10,9 +10,9 @@ eat_material_index = 2
 plant_material_index = 3
 
 
-cubesize = 4
+cubesize = 8
 
-mcubex = 5  --note, sphere fucntion assume these 3 are equal
+mcubex = 9  --note, sphere fucntion assume these 3 are equal
 mcubey = mcubex 
 mcubez = mcubex
 
@@ -267,8 +267,8 @@ end
 
 
 
---init()
---movey(6)
+init()
+movez(60)
 
 
 
