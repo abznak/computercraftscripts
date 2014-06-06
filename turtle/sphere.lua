@@ -182,9 +182,14 @@ function select_building_material()
   end
   return turtle.getItemCount(ss) > 0
 end
+
+function init()
+	select_slot(0)
+end
+
+
    
 
    
---movey(20)
---movex(15)
+init()
 makeCubes()
