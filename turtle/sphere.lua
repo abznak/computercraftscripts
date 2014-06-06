@@ -267,8 +267,8 @@ end
 
 
 
-init()
-movez(60)
+--init()
+--movez(60)
 
 
 
