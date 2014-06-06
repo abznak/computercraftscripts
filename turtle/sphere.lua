@@ -38,7 +38,7 @@ function rndInCube()
 	dbg("rndInCube")
 	local dx = math.random(cubesize)-1
 	local dy = math.random(cubesize)-1
-	local dz = math.random(cubesize)-1
+	local dz = math.random(cubesize)-1-1   --extra -1 so we can have a 2 high block
 
 
 	if (not isIn(tx+dx,ty+dy,tz+dz)) then
@@ -57,9 +57,12 @@ function rndInCube()
 	select_building_material()
 	turtle.placeDown()
 	dbg("placed")
+	movez(1)
+	select_material(plant_material_index)
+	turtle.placeDown()
 	movex(-dx)
 	movey(-dy)
-	movez(cubesize-dz)
+	movez(cubesize-dz-1) --extra -1 because of the movez(1)
 	dbg("/rndInCube")
 end
 
