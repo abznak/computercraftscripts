@@ -313,7 +313,7 @@ for k = 1, 5, 1 do
 end
 ]]
 
-turtle.forward()
+--[[turtle.forward()
 turtle.forward()
 turtle.forward()
 turtle.forward()
@@ -344,9 +344,10 @@ turtle.down()
 turtle.down()
 turtle.down()
 turtle.down()
-
+]]
 build_diamond(3, true)
 print "done.  press any key to erase"
+read()
 build_diamond(3, false)
 
 --[[turtle.up()
