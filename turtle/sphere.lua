@@ -99,7 +99,7 @@ function obstruction_check()
 		exit()
 	else
 		dbg('oc', "obstruction")
-		exit()
+		exit() --not an actual function?  still, it works
 	end
 end
 
@@ -221,6 +221,8 @@ function select_material(i)
 			return true
 		end
 	end
+	dbg(fnn, "not found :(")
+	exit()
 	return false
 			
 
