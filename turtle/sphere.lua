@@ -61,12 +61,12 @@ function makeCubes()
 				rndInCube()
 			end
 			movey(cubesize)
-			movez(mcubez * cubesize)
+			movez(-mcubez * cubesize)
 		end
 		movex(cubesize)
-		movey(mcubey * cubesize)
+		movey(-mcubey * cubesize)
 	end
-	movex(mcubez * cubesize)
+	movex(-mcubez * cubesize)
 end				
 	
 	
