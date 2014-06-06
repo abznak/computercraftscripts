@@ -64,7 +64,7 @@ end
 
 function isIn(x,y,z)
 --sphere
-	r = cubesize * mcubex
+	r = cubesize * mcubex / 2
 	local nx = x - r
 	local ny = y - r
 	local nz = z - r
