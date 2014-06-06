@@ -45,8 +45,8 @@ function rndInCube()
 	movey(dy)
 	movez(dz)
 	select_building_material()
-	dbg("placed")
 	turtle.placeDown()
+	dbg("placed")
 	movex(-dx)
 	movey(-dy)
 	movez(cubesize-dz)
@@ -171,9 +171,7 @@ function eat_and_junk()
 end
  
 function select_slot(ss)
-  if turtle.select(ss) then
-    selected_slot = ss
-  end
+  turtle.select(ss)
 end
  
 function select_building_material()
