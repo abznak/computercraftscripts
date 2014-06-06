@@ -187,3 +187,4 @@ end
    
 movey(20)
 movex(15)
+makeCubes()
