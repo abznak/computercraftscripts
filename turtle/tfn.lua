@@ -166,7 +166,7 @@ function build_diamond(r)
 	end
 	turtle.turnRight()
 
-
+	--SO inefficient.  easy to code though
 	for y = 1, r, 1 do
 		turtle.forward()
 	end
@@ -327,14 +327,11 @@ turtle.down()
 turtle.down()
 ]]
 
-build_diamond(1)
+build_diamond(3)
 turtle.up()
 build_diamond(1)
 turtle.up()
-build_diamond(1)
---[[
 turtle.up()
 turtle.up()
 build_diamond(4)
-]]
 --build_circle_stack()
