@@ -263,8 +263,8 @@ end
 
 
 
-init()
-movey(6)
+--init()
+--movey(6)
 
 
 
