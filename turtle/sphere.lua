@@ -68,7 +68,7 @@ function isIn(x,y,z)
 	local nx = x - r
 	local ny = y - r
 	local nz = z - r
-	dbg('isin', 'nx', nx, 'ny', ny,'nz', nz, 'r', r)
+	dbg('isin', 'nx '.. nx.. ' ny '.. ny .. ' nz ' .. nz .. ' r ' .. r)
 	return nx*nx+ny*ny+nz*nz < r*r
 end
 
