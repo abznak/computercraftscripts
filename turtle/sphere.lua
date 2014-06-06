@@ -195,8 +195,7 @@ end
 
 
    
---turtle.up()  --because everything happens one square down from the turtle
-movey(20)
+turtle.up()  --because everything happens one square down from the turtle
 
    
 init()
