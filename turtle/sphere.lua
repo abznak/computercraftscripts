@@ -216,10 +216,13 @@ function select_material(mat_index)
 	
 	for ss = internal_storage_start, internal_storage_stop, 1 do
 		dbg(fnn, 'testing ' .. ss .. ' against ' .. mat_index)
-		if (turtle.getItemCount(ss) > 0) and turtle.compareTo(mat_index) then
-			dbg(fnn, 'found! ' .. ss)
+		if (turtle.getItemCount(ss) > 0) then
 			select_slot(ss)
-			return true
+			if turtle.compareTo(mat_index) then
+				dbg(fnn, 'found! ' .. ss)
+				select_slot(ss)
+				return true
+			end
 		end
 	end
 	dbg(fnn, "not found :(")
