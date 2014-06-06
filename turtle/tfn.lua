@@ -299,5 +299,5 @@ for k = 1, 5, 1 do
 end
 ]]
 
-build_diamond(2)
+build_diamond(3)
 --build_circle_stack()
