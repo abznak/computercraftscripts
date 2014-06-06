@@ -254,8 +254,8 @@ end
 
 
 -- remember to double call iniit if you do any preliminary moving
-init()
-movez(-20)
+--init()
+--movez(-20)
 
 
 
