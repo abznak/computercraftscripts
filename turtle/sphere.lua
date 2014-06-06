@@ -274,14 +274,5 @@ end
 
 print ('in 3...')   
 os.sleep(3)
-turtle.up()  --because everything happens one square down from the turtle
-init()
-	select_building_material()
-	turtle.placeDown()
-	dbg("placed")
-	movez(1)
-	select_material(plant_material_index)
-	turtle.placeDown()
-exit()
 init()
 makeCubes()
