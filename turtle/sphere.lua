@@ -29,7 +29,7 @@ selected_slot = 0
 print("Material to keep at slot " .. keep_material_index)
 print("Material to eat at slot " .. eat_material_index)
 print("Material to plant at slot " .. plant_material_index)
-read()
+--read()
 
 --[[
   pre - in bottom left back of cube
