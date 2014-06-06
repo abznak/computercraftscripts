@@ -177,7 +177,7 @@ function select_building_material()
   if ss < internal_storage_start or ss > internal_storage_stop then
     dbg(fnn, 'out of range')
     select_slot(internal_storage_start)
-    ss = interal_storage_start
+    ss = internal_storage_start
   end
 	dbg(fnn, 'ss ' .. ss)
 	dbg(fnn, 'iss ' .. internal_storage_stop)
