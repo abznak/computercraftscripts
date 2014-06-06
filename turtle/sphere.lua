@@ -11,9 +11,9 @@ plant_material_index = 3
 
 cubesize = 2
 
-mcubex = 1  --note, sphere fucntion assume these 3 are equal
-mcubey = 1
-mcubez = 1
+mcubex = 3  --note, sphere fucntion assume these 3 are equal
+mcubey = 3
+mcubez = 3
 
 -- locations before this are reserved
 internal_storage_start = 4
@@ -69,7 +69,7 @@ function isIn(x,y,z)
 	local ny = y - r
 	local nz = z - r
 	dbg('isin', 'nx '.. nx.. ' ny '.. ny .. ' nz ' .. nz .. ' r ' .. r)
-	return nx*nx+ny*ny+nz*nz < r*r
+	return nx*nx+ny*ny+nz*nz <= r*r
 end
 
 
@@ -246,9 +246,11 @@ function init()
 	eat_and_junk()
 end
 
-init()
---movez(-40)
 
+
+-- remember to double call iniit if you do any preliminary moving
+--init()
+--movez(-40)
 
 
 
