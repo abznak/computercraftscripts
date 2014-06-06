@@ -221,7 +221,7 @@ end
 
 function init()
 	print ('selected slot', selected_slot)
-	for j = 1, 10, 1 do
+	for j = 1, 3, 1 do
 		print ("eat and junk" .. j)
 		if not eat_and_junk() then
 			print "done eating"
@@ -326,6 +326,16 @@ turtle.down()
 turtle.down()
 turtle.down()
 ]]
+turtle.up()
+turtle.up()
+turtle.up()
+turtle.up()
+turtle.up()
+turtle.up()
+turtle.up()
+turtle.up()
+turtle.up()
+turtle.up()
 
 build_diamond(3)
 turtle.up()
