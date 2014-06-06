@@ -11,7 +11,7 @@ plant_material_index = 3
 
 cubesize = 1
 
-mcubex = 3  --note, sphere fucntion assume these 3 are equal
+mcubex = 7  --note, sphere fucntion assume these 3 are equal
 mcubey = mcubex 
 mcubez = mcubex
 
@@ -146,7 +146,7 @@ function movex(n)
 	if n == 0 then
 		return
 	end
-	turtle.turnLeft()
+	turtle.turnRight()
 	absn = math.abs(n)
 	unitn = n/absn
 	for i = 1, math.abs(n), 1 do
@@ -161,7 +161,7 @@ function movex(n)
 			tx = tx + unitn
 		end
 	end
-	turtle.turnRight()
+	turtle.turnLeft()
 end
 		
 		
