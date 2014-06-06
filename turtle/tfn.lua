@@ -147,16 +147,9 @@ function build_diamond(r)
 
 
 		-- wasteful, but easy to code
---  	for x = -r, r, 1 do
---			turtle.back()
---		end
-	for y = 0, -r, -1 do
-		turtle.back()
-	end
-	turtle.turnLeft()
-	for y = 0, -r, -1 do
-		turtle.back()
-	end
+  	for x = -r, r, 1 do
+			turtle.back()
+		end
 
 		turtle.turnLeft()
 		turtle.forward()
@@ -166,12 +159,19 @@ function build_diamond(r)
 	end
 
 
-  -- possibly off by one
-	turtle.turnLeft()
-	for y = -r, r, 1 do
+	for y = 0, -r, -1 do
 		turtle.back()
 	end
-	turtle.turnRight()
+	turtle.turnLeft()
+	for y = 0, -r, -1 do
+		turtle.back()
+	end
+  -- possibly off by one
+--	turtle.turnLeft()
+--	for y = -r, r, 1 do
+--		turtle.back()
+--	end
+--	turtle.turnRight()
 		
 end
    
@@ -306,10 +306,11 @@ for k = 1, 5, 1 do
 end
 ]]
 
-turtle.up()
-turtle.up()
-turtle.up()
-turtle.up()
+turtle.forward()
+turtle.forward()
+turtle.forward()
+turtle.forward()
+turtle.forward()
 
 build_diamond(3)
 turtle.up()
