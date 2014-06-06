@@ -118,7 +118,7 @@ end
    
 -- build a flat circle.
 -- no error checking, because the fails will be art
-function build_diamond(r) 
+function build_diamond(r, isplace) 
 	for y = -1, -r, -1 do
 		turtle.back()
 	end
@@ -138,9 +138,14 @@ function build_diamond(r)
 			else
 				a = a .. '.'
 			end
+
 			if isin then
-				select_building_material()
-				turtle.placeDown()
+				if isplace then
+					select_building_material()
+					turtle.placeDown()
+				else
+					turtle.digDown()
+				end
 			end
 			turtle.forward()
 		end
@@ -308,14 +313,19 @@ for k = 1, 5, 1 do
 end
 ]]
 
---[[turtle.forward()
 turtle.forward()
 turtle.forward()
 turtle.forward()
 turtle.forward()
-]]
+turtle.forward()
+turtle.forward()
+turtle.forward()
+turtle.forward()
+turtle.forward()
+turtle.forward()
+turtle.forward()
+turtle.forward()
 
---[[turtle.down()
 turtle.down()
 turtle.down()
 turtle.down()
@@ -325,18 +335,25 @@ turtle.down()
 turtle.down()
 turtle.down()
 turtle.down()
-]]
-turtle.up()
-turtle.up()
-turtle.up()
-turtle.up()
-turtle.up()
+turtle.down()
+turtle.down()
+turtle.down()
+turtle.down()
+turtle.down()
+turtle.down()
+turtle.down()
+turtle.down()
+turtle.down()
 
-build_diamond(3)
-turtle.up()
+build_diamond(3, true)
+print "done.  press any key to erase"
+build_diamond(3, false)
+
+--[[turtle.up()
 build_diamond(1)
 turtle.up()
 turtle.up()
 turtle.up()
 build_diamond(4)
+]]
 --build_circle_stack()
