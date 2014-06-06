@@ -119,11 +119,11 @@ end
 -- build a flat circle.
 -- no error checking, because the fails will be art
 function build_diamond(r) 
-	for y = 0, -r, -1 do
+	for y = -1, -r, -1 do
 		turtle.back()
 	end
 	turtle.turnLeft()
-	for y = 0, -r, -1 do
+	for y = -1, -r, -1 do
 		turtle.back()
 	end
 	turtle.turnRight()
@@ -159,19 +159,21 @@ function build_diamond(r)
 	end
 
 
-	for y = 0, -r, -1 do
+  -- possibly off by one
+	turtle.turnLeft()
+	for y = -r, r, 1 do
+		turtle.back()
+	end
+	turtle.turnRight()
+
+
+	for y = 1, r, 1 do
 		turtle.back()
 	end
 	turtle.turnLeft()
-	for y = 0, -r, -1 do
+	for y = 1, r, 1 do
 		turtle.back()
 	end
-  -- possibly off by one
---	turtle.turnLeft()
---	for y = -r, r, 1 do
---		turtle.back()
---	end
---	turtle.turnRight()
 		
 end
    
@@ -312,11 +314,14 @@ turtle.forward()
 turtle.forward()
 turtle.forward()
 
-build_diamond(3)
+build_diamond(1)
 turtle.up()
 build_diamond(1)
 turtle.up()
+build_diamond(1)
+--[[
 turtle.up()
 turtle.up()
 build_diamond(4)
+]]
 --build_circle_stack()
