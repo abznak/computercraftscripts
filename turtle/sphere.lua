@@ -267,6 +267,8 @@ print ('in 3...')
 os.sleep(3)
 turtle.up()  --because everything happens one square down from the turtle
 
-   
+	select_building_material()
+	turtle.placeDown()
+  exit() 
 init()
 makeCubes()
