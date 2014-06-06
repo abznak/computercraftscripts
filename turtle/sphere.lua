@@ -14,7 +14,7 @@ tz = 0
 
 cubesize = 2
 
-mcubex = 3
+mcubex = 3  --note, sphere fucntion assume these 3 are equal
 mcubey = 3
 mcubez = 3
 
@@ -23,7 +23,7 @@ internal_storage_start = 4
 internal_storage_stop = 16
  
 -- internal vars
-selected_slot = 0
+selected_slot = 1
 
 
 print("Material to keep at slot " .. keep_material_index)
@@ -41,6 +41,18 @@ function rndInCube()
 	local dx = math.random(cubesize)-1
 	local dy = math.random(cubesize)-1
 	local dz = math.random(cubesize)-1
+
+
+	if (not isIn(tx+dx,ty+dy,tz+dz)) then
+		--our random point is not in, move to next cube
+		movez(cubesize)
+		return
+	end	
+
+
+
+
+
 	movex(dx)
 	movey(dy)
 	movez(dz)
@@ -52,6 +64,17 @@ function rndInCube()
 	movez(cubesize-dz)
 	dbg("/rndInCube")
 end
+
+function isIn(x,y,z)
+--sphere
+	r = cubesize * mcubex
+	local nx = x - r
+	local ny = y - r
+	local nz = z - r
+	dbg('isin', 'nx', nx, 'ny', ny,'nz', nz, 'r', r)
+	return nx*nx+ny*ny+nz*nz < r*r
+end
+
 
 function makeCubes()
 	dbg('makeCubes')
