@@ -18,6 +18,19 @@ mcubex = 2
 mcubey = 2
 mcubez = 2
 
+-- locations before this are reserved
+internal_storage_start = 4
+internal_storage_stop = 16
+ 
+-- internal vars
+selected_slot = 0
+
+
+print("Material to keep at slot " .. keep_material_index)
+print("Material to eat at slot " .. eat_material_index)
+print("Material to plant at slot " .. plant_material_index)
+read()
+
 --[[
   pre - in bottom left back of cube
   post - in bottom left back of cube above
@@ -124,17 +137,8 @@ end
 		
  
  
-print("Material to keep at slot " .. keep_material_index)
-print("Material to eat at slot " .. eat_material_index)
-print("Material to plant at slot " .. plant_material_index)
  
  
--- locations before this are reserved
-internal_storage_start = 4
-internal_storage_stop = 16
- 
--- internal vars
-selected_slot = 0
  
 function dbg(src, msg)
   print (src, " ", tx, ",", ty, ",", tz, " ", msg)
@@ -175,6 +179,8 @@ function select_building_material()
     select_slot(internal_storage_start)
     ss = interal_storage_start
   end
+	dbg(fnn, 'ss ' .. ss)
+	dbg(fnn, 'iss ' .. internal_storage_stop)
   while (turtle.getItemCount(ss) == 0) and (ss < internal_storage_stop) do
     dbg(fnn, 'nothing at ' .. ss)
     ss = ss + 1
