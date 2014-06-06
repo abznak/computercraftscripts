@@ -14,9 +14,9 @@ tz = 0
 
 cubesize = 2
 
-mcubex = 3  --note, sphere fucntion assume these 3 are equal
-mcubey = 3
-mcubez = 3
+mcubex = 1  --note, sphere fucntion assume these 3 are equal
+mcubey = 1
+mcubez = 1
 
 -- locations before this are reserved
 internal_storage_start = 4
@@ -97,9 +97,9 @@ end
 
 function obstruction_check()
 	if (turtle.getFuelLevel() == 0) then
-		dbg('out of fuel')
+		dbg('oc', 'out of fuel')
 	else
-		dbug("obstruction")
+		dbg('oc', "obstruction")
 	end
 end
 
@@ -247,7 +247,8 @@ function init()
 end
 
 
-   
+print ('in 3...')   
+os.sleep(3)
 turtle.up()  --because everything happens one square down from the turtle
 
    
