@@ -116,6 +116,57 @@ function select_building_material()
 end
    
    
+-- build a flat circle.
+-- no error checking, because the fails will be art
+function build_diamond(r) 
+	for y = 1, -r, -1 do
+		turtle.back()
+	end
+	turtle.turnLeft()
+	for y = 1, -r, -1 do
+		turtle.back()
+	end
+	turtle.turnRight()
+
+
+	for y = -r, r, 1 do
+		a = ''
+  	for x = -r, r, 1 do     
+			local isin = math.abs(y) + math.abs(x) <= r
+			if isin then
+				a = a .. '#'
+			else
+				a = a .. '.'
+			end
+			if isin then
+				select_building_material()
+				turtle.placeDown()
+			end
+			turtle.forward()
+		end
+
+
+		-- wasteful, but easy to code
+  	for x = -r, r, 1 do
+			turtle.back()
+		end
+
+		turtle.turnLeft()
+		turtle.forward()
+		turtle.turnRight()
+
+		print(a)
+	end
+
+
+  -- possibly off by one
+	turtle.turnLeft()
+	for y = -r, r, 1 do
+		turtle.back()
+	end
+	turtle.turnRight()
+		
+end
    
 -- build a flat circle.
 -- no error checking, because the fails will be art
@@ -193,9 +244,9 @@ function build_circle_stack()
 	r_start = 3
 	r_step = 3
 ]]
-	stack_size = 3
-	r_start = 3
-	r_step = 3
+	stack_size = 2
+	r_start = 6
+	r_step = 4
 
 	r_stop = (stack_size-1) * r_step + r_start
 	for r = r_start, r_stop, r_step do
@@ -235,7 +286,7 @@ for k = 1, 30, 1 do
 	turtle.forward()
 end
 ]]
-turtle.turnRight()
+--[[turtle.turnRight()
 for k = 1, 15, 1 do
 	turtle.forward()
 end
@@ -246,5 +297,7 @@ turtle.turnLeft()
 for k = 1, 5, 1 do
 	turtle.down()
 end
+]]
 
-build_circle_stack()
+build_diamond(2)
+--build_circle_stack()
