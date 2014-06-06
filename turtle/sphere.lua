@@ -8,9 +8,6 @@ keep_material_index = 1
 eat_material_index = 2
 plant_material_index = 3
 
-tx = 0
-ty = 0
-tz = 0
 
 cubesize = 2
 
@@ -242,12 +239,23 @@ function select_material(i)
 end
 
 function init()
+	tx = 0
+	ty = 0
+	tz = 0
 	select_slot(1)
 	eat_and_junk()
 end
 
+init()
+--movez(-40)
 
-movez(-40)
+
+
+
+init()
+
+
+
 print ('in 3...')   
 os.sleep(3)
 turtle.up()  --because everything happens one square down from the turtle
